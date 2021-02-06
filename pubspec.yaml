@@ -52,7 +52,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/svg/
+  #  - assets/images/svg/
     - assets/images/png/
     - assets/lottie/
 
@@ -77,6 +77,11 @@ flutter:
         - asset: assets/fonts/Comfortaa-Regular.ttf
         - asset: assets/fonts/Comfortaa-Bold.ttf
           weight: 700
+    - family: PTSherifRegular
+      fonts:
+      - asset: assets/fonts/PTSerif-Regular.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
