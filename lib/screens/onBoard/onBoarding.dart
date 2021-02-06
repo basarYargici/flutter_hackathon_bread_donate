@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/constants.dart';
-import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
 import 'package:flutter_hackathon_bread_donate/screens/onBoard/onBoardingContent.dart';
 
 class OnBoarding extends StatefulWidget {
