@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/routes.dart';
-import 'package:flutter_hackathon_bread_donate/screens/splash/splash_screen.dart';
+import 'package:flutter_hackathon_bread_donate/screens/onBoard/onBoarding.dart';
+//import 'package:flutter_hackathon_bread_donate/screens/splash/splash_screen.dart';
 
 void main() {
   runApp(DonationApp());
@@ -14,7 +15,7 @@ class DonationApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.fallback(),
-      initialRoute: SplashScreen.routeName,
+      initialRoute: OnBoarding.routeName,
       routes: routes,
     );
   }
