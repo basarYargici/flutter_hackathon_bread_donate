@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/constants.dart';
+import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
 import 'package:flutter_hackathon_bread_donate/screens/onBoard/onBoardingContent.dart';
 
 class OnBoarding extends StatefulWidget {
   static String routeName = '/onBoarding_screen';
+
   OnBoarding({Key key}) : super(key: key);
 
   @override
@@ -12,6 +14,7 @@ class OnBoarding extends StatefulWidget {
 
 class _OnBoardingState extends State<OnBoarding> {
   int current = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +24,7 @@ class _OnBoardingState extends State<OnBoarding> {
         child: Column(
           children: [
             Expanded(
-              flex: 10,
+              flex: 8,
               child: PageView.builder(
                   itemCount: dataOnBoarding.length,
                   onPageChanged: (value) {
@@ -35,34 +38,54 @@ class _OnBoardingState extends State<OnBoarding> {
                         text: dataOnBoarding[index]['text'],
                       )),
             ),
+            Spacer(flex: 1),
             Expanded(
               flex: 2,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                        dataOnBoarding.length, (index) => dot(index: index)),
-                  ),
-                ],
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+                child: Column(
+                  children: [
+                    Spacer(flex: 1),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(dataOnBoarding.length, (index) => buildDot(index)),
+                    ),
+                    Spacer(flex: 2),
+                    Container(
+                      height: current != dataOnBoarding.length ? 0 : getProportionateScreenHeight(56),
+                      child: SizedBox(
+                          width: double.infinity,
+                          height: getProportionateScreenHeight(50),
+                          child: IconButton(
+                            icon: Icon(Icons.navigate_next),
+                            onPressed: () {
+                              print("pressed");
+                              setState(() {
+                                current++;
+                              });
+                              // Navigate to next page
+                            },
+                          )),
+                    ),
+                    Spacer(flex: 1,),
+                  ],
+                ),
               ),
-              //child: ,
-            ),
+            )
           ],
         ),
       ),
     );
   }
-}
 
-Container dot({int index}) {
-  return Container(
-    margin: EdgeInsets.only(right: 5),
-    height: 6,
-    width:
-        6, //TODO: current == index ? 22 : 6 aşağıdaki üçlüden sayfaya gelince uzaması lazım
-    decoration: BoxDecoration(
-        color: Color(0xff8FC2EE), borderRadius: BorderRadius.circular(3)),
-  );
+  AnimatedContainer buildDot(index) {
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 2),
+      margin: EdgeInsets.only(right: 10),
+      height: getProportionateScreenHeight(7),
+      width: current == index ? getProportionateScreenWidth(20) : getProportionateScreenWidth(7),
+      // change colors
+      decoration: BoxDecoration(color: current == index ? Colors.blueAccent : Colors.orange[200], borderRadius: BorderRadius.circular(3)),
+    );
+  }
 }
