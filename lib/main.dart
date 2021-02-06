@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/routes.dart';
+import 'package:flutter_hackathon_bread_donate/config/styles/styles.dart';
+import 'package:flutter_hackathon_bread_donate/screens/home/home_screen.dart';
 import 'package:flutter_hackathon_bread_donate/screens/splash/splash_screen.dart';
 
 void main() {
@@ -13,8 +15,8 @@ class DonationApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData.fallback(),
-      initialRoute: SplashScreen.routeName,
+      theme: customTheme,
+      initialRoute: HomeScreen.routeName,
       routes: routes,
     );
   }

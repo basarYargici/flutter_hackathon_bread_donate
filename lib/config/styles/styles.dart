@@ -37,3 +37,44 @@ final TextStyle subtitleStyle = baseStyle.copyWith(
 final TextStyle contentStyle = baseStyle.copyWith(
   fontWeight: FontWeight.w300,
 );
+
+final TextStyle cardTitleTextStyle = TextStyle(
+  letterSpacing: 0.05,
+  fontFamily: 'Comfortaa',
+  fontSize: 17,
+  fontWeight: FontWeight.w900,
+);
+
+final TextStyle cardNumberTextStyle = TextStyle(
+  fontFamily: 'Comfortaa',
+  fontSize: 24,
+  fontWeight: FontWeight.w800,
+);
+
+//box styles
+final BoxShadow cardBoxShadow = BoxShadow(
+  blurRadius: 4,
+  offset: Offset(0, 4),
+  color: Colors.black.withOpacity(0.5),
+);
+
+final BoxDecoration customCardBoxDecoration = BoxDecoration(
+  boxShadow: [cardBoxShadow],
+  color: Color(0xff8FC2EE),
+  borderRadius: BorderRadius.circular(15),
+  border: Border.all(color: Color(0x662086DD), width: 5),
+);
+
+final BoxDecoration donateButtonBoxDecoration = BoxDecoration(
+  color: Color(0xff5349C4),
+  borderRadius: BorderRadius.circular(20),
+  boxShadow: [cardBoxShadow],
+  border: Border.all(color: Colors.black.withOpacity(0.2), width: 3),
+);
+
+//custom themes
+final ThemeData customTheme = ThemeData().copyWith(
+  bottomSheetTheme: BottomSheetThemeData(
+    modalBackgroundColor: Colors.transparent,
+  ),
+);
