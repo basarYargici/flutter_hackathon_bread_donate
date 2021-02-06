@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.0
   lottie: ^0.7.0+1
   pedantic: ^1.9.2
+  http: ^0.12.2
+  flutter_spinkit: ^4.1.2+1
 
 
 

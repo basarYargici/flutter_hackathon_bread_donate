@@ -9,7 +9,7 @@ class LottieWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Lottie.asset(
-      'lib/assets/lottie/$path',
+      'assets/lottie/$path',
     );
   }
 }
