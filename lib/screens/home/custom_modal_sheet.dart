@@ -32,7 +32,7 @@ class CustomModalSheet extends StatelessWidget {
                     CounterIconButton(
                       icon: Icon(
                         Icons.remove,
-                        size: 50,
+                        size: 45,
                       ),
                       pressed: () {
                         print('ss');
@@ -48,7 +48,7 @@ class CustomModalSheet extends StatelessWidget {
                     CounterIconButton(
                       icon: Icon(
                         Icons.add,
-                        size: 50,
+                        size: 45,
                       ),
                       pressed: () {
                         print('ss');
