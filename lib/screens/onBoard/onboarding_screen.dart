@@ -8,7 +8,6 @@ import 'file:///D:/AndroidProjects/flutter_hackathon_bread_donate/lib/screens/on
 import 'components/inky_button.dart';
 
 
-// TODO's Sharedpref first time opening
 // TODO's add new lottie gifs to new pageview screens
 
 class OnboardingScreen extends StatefulWidget {

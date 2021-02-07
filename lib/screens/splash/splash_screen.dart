@@ -9,10 +9,10 @@ import 'package:flutter_hackathon_bread_donate/models/baker_system_model.dart';
 import 'package:flutter_hackathon_bread_donate/service/service.dart';
 import 'package:flutter_hackathon_bread_donate/widgets/lottie_widget.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import 'components/app_name.dart';
+import 'components/splash_text.dart';
 
+// TODO's baker should be send to HOMESCREEN
 class SplashScreen extends StatefulWidget {
   static String routeName = '/splash_screen';
 
@@ -68,6 +68,15 @@ class _SplashScreenState extends State<SplashScreen> {
                 // logs
                 // print(_baker.freeBread.count);
                 // print(_baker.givenBread.count);
+
+                /*
+                _baker.freeBread.count = 0
+
+                + ya bastın -> count ++ , sistemi bilgilendir
+              db de yeni bi countun oluştu
+              db de sana yeni veriyi aktardı
+              _baker.freeBread.count ile yeni count u aldın
+                 */
 
                 // if user enters the application, navigate to onboarding page, otherwise home page
                 // navigate with baker object as a parameter
