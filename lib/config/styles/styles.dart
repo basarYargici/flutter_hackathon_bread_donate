@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
+import 'package:flutter_hackathon_bread_donate/screens/home/custom_drawer.dart';
 
 // Heights, widths and colors will be change according to app design
 
@@ -82,9 +83,18 @@ final BoxDecoration modalBottomSheetBoxDecoration = BoxDecoration(
   color: Color(0xffCCDBE8),
   border: Border.all(color: Color(0xff2086DD).withOpacity(0.5), width: 6),
 );
+
+final customDrawerBoxDecoration = BoxDecoration(
+  borderRadius: BorderRadius.only(
+    topRight: Radius.circular(30),
+    bottomRight: Radius.circular(30),
+  ),
+  color: Color(0xffCCDBE8),
+);
 //custom themes
 final ThemeData customTheme = ThemeData().copyWith(
   bottomSheetTheme: BottomSheetThemeData(
     modalBackgroundColor: Colors.transparent,
   ),
+  canvasColor: Colors.transparent,
 );

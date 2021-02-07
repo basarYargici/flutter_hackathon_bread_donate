@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
 import 'package:flutter_hackathon_bread_donate/config/styles/styles.dart';
 import 'package:flutter_hackathon_bread_donate/screens/home/custom_modal_sheet.dart';
 import 'components/custom_card.dart';
 import 'components/vertical_card.dart';
+import 'package:http/http.dart' as http;
+import 'custom_drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   static String routeName = '/home_page';
@@ -15,13 +19,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int avaibleBreadCount = 28423;
+
+  @override
+  void initState() {
+    super.initState();
+    // var res = await http.get(
+    //     'https://flutterhackathon21-breaddonate-default-rtdb.firebaseio.com/free.json');
+    // avaibleBreadCount = jsonDecode(res.body)['count'];
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: Color(0xffCCDBE8),
+      backgroundColor: Color(0xffE1E6EB),
       appBar: buildAppBar(),
-      drawer: Drawer(),
+      drawer: CustomDrawer(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -33,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   image: AssetImage('assets/images/png/bread_icon_black.png'),
                 ),
                 title: 'Askıdaki Ekmekler',
-                number: '43857',
+                number: '${avaibleBreadCount.toString()}',
               ),
               CustomCard(
                 image: Image(
@@ -75,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: Color(0xffCCDBE8),
+      backgroundColor: Color(0xffE1E6EB),
       elevation: 0,
       leading: Builder(
         builder: (context) {

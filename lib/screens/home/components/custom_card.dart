@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/styles/styles.dart';
 
 class CustomCard extends StatelessWidget {
@@ -18,7 +19,10 @@ class CustomCard extends StatelessWidget {
     return Container(
       height: 220,
       width: 180,
-      decoration: shadowedBoxDecoration.copyWith(color: Color(0xffDCD8F1)),
+      decoration: shadowedBoxDecoration.copyWith(
+        color: Color(0xffDCD8F1),
+        border: Border.all(color: Color(0xff2086DD).withOpacity(0.4), width: 6),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

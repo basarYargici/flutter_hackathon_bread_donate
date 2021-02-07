@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/constants.dart';
 import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
 import 'package:flutter_hackathon_bread_donate/screens/home/home_screen.dart';
-import 'file:///D:/AndroidProjects/flutter_hackathon_bread_donate/lib/screens/onBoard/components/onboarding_content.dart';
+import 'components/onboarding_content.dart';
+import 'package:flutter_hackathon_bread_donate/screens/onBoard/components/onboarding_content.dart';
 
 import 'components/inky_button.dart';
 
@@ -76,7 +77,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Spacer(flex: 1),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(dataOnboarding.length, (index) => buildDot(index)),
+            children: List.generate(
+                dataOnboarding.length, (index) => buildDot(index)),
           ),
           Spacer(flex: 1),
           nextPageView(context),
@@ -96,8 +98,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           icon: Icon(Icons.navigate_next),
           onPressed: () {
             setState(() {
-              _pageController.nextPage(duration: Duration(milliseconds: 350), curve: Curves.linear);
-              currentPageIndex < 2 ? currentPageIndex++ : Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+              _pageController.nextPage(
+                  duration: Duration(milliseconds: 350), curve: Curves.linear);
+              currentPageIndex < 2
+                  ? currentPageIndex++
+                  : Navigator.pushReplacementNamed(
+                      context, HomeScreen.routeName);
             });
             // Navigate to next page
           },
@@ -109,9 +115,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       duration: Duration(milliseconds: 2),
       margin: EdgeInsets.only(right: 10),
       height: getProportionateScreenHeight(7),
-      width: currentPageIndex == index ? getProportionateScreenWidth(20) : getProportionateScreenWidth(7),
+      width: currentPageIndex == index
+          ? getProportionateScreenWidth(20)
+          : getProportionateScreenWidth(7),
       // change colors
-      decoration: BoxDecoration(color: currentPageIndex == index ? Colors.purple[300] : Colors.blue[300], borderRadius: BorderRadius.circular(3)),
+      decoration: BoxDecoration(
+          color:
+              currentPageIndex == index ? Colors.purple[300] : Colors.blue[300],
+          borderRadius: BorderRadius.circular(3)),
     );
   }
 }
