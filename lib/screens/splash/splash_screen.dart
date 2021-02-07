@@ -2,13 +2,14 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_hackathon_bread_donate/config/checkIsLoggedIn.dart';
 import 'package:flutter_hackathon_bread_donate/config/constants.dart';
 import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
 import 'package:flutter_hackathon_bread_donate/models/baker_system_model.dart';
-import 'package:flutter_hackathon_bread_donate/screens/onBoard/onboarding_screen.dart';
 import 'package:flutter_hackathon_bread_donate/service/service.dart';
 import 'package:flutter_hackathon_bread_donate/widgets/lottie_widget.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'components/app_name.dart';
 
@@ -21,6 +22,12 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Baker _baker;
+  int logInCount;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,23 +69,11 @@ class _SplashScreenState extends State<SplashScreen> {
                 // print(_baker.freeBread.count);
                 // print(_baker.givenBread.count);
 
+                // if user enters the application, navigate to onboarding page, otherwise home page
+                // navigate with baker object as a parameter
+                print('Navigating');
                 Timer(Duration(seconds: 3), () {
-                  print('Navigating');
-                  // if user enters the application, navigate to onboarding page, otherwise home page
-                  // navigate with baker object as a parameter
-                  // Navigator.pushReplacement(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => Check(
-                  //       baker: _baker,
-                  //     ),
-                  //   ),
-                  // );
-
-                  Navigator.pushReplacementNamed(
-                    context,
-                    OnboardingScreen.routeName,
-                  );
+                  isLoggedIn().then((value) => Navigator.pushReplacementNamed(context, value));
                 });
               }
               return Center(
