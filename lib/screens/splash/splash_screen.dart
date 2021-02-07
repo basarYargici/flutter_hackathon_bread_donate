@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_hackathon_bread_donate/config/constants.dart';
 import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
 import 'package:flutter_hackathon_bread_donate/models/baker_system_model.dart';
-import 'package:flutter_hackathon_bread_donate/screens/onBoard/onBoarding.dart';
+import 'package:flutter_hackathon_bread_donate/screens/onBoard/onboarding_screen.dart';
 import 'package:flutter_hackathon_bread_donate/service/service.dart';
 import 'package:flutter_hackathon_bread_donate/widgets/lottie_widget.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -75,9 +75,9 @@ class _SplashScreenState extends State<SplashScreen> {
                   //   ),
                   // );
 
-                  Navigator.pushNamed(
+                  Navigator.pushReplacementNamed(
                     context,
-                    OnBoarding.routeName,
+                    OnboardingScreen.routeName,
                   );
                 });
               }
