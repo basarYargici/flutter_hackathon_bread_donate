@@ -1,6 +1,6 @@
 # flutter_hackathon_bread_donate
 
-This project was built for the Flutter Hackhaton Turkey.
+This project was built for the Flutter Hackhaton Turkey. </br>Main aim of this project is innovate in the "Askıda Ekmek" system which has purpose of help people in need.
 
 ## Getting Started
 
