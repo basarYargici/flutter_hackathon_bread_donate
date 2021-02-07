@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon_bread_donate/config/constants.dart';
 import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
 import 'package:flutter_hackathon_bread_donate/config/styles/styles.dart';
 import 'package:flutter_hackathon_bread_donate/screens/home/custom_modal_sheet.dart';
@@ -50,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
     SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffE1E6EB),
+        backgroundColor: Constants.Scaffold_Background_Color,
         appBar: CustomAppBar(
           appBar: AppBar(),
         ),

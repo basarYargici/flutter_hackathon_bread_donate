@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Constants {
   final isLoggedIn = false;
   static const String APP_NAME = 'FIRINCIM';
@@ -9,6 +11,7 @@ class Constants {
   static const String GIVE_BREAD_ANIM_PATH = 'lottie_onboard.json';
   static const String BASE_URL =
       'https://flutterhackathon21-breaddonate-default-rtdb.firebaseio.com/';
+  static const Color Scaffold_Background_Color = Color(0xffE1E6EB);
 }
 
 List<Map<String, String>> dataOnboarding = [

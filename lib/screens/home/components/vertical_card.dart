@@ -15,24 +15,28 @@ class VerticalCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
-      width: 380,
-      height: 135,
-      decoration: shadowedBoxDecoration.copyWith(color: Color(0xffDCD8F1)),
+      width: size.width * 0.95,
+      height: size.height * 0.2,
+      decoration: shadowedBoxDecoration.copyWith(
+        color: Color(0xffDCD8F1),
+        border: Border.all(color: Color(0xff2086DD).withOpacity(0.4), width: 5),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 20),
             child: SizedBox(
-              height: 85,
-              width: 85,
+              height: size.height * 0.125,
+              width: size.width * 0.20,
               child: image,
             ),
           ),
           Container(
-            height: 45,
-            width: 150,
+            height: size.height * 0.065,
+            width: size.width * 0.365,
             child: Text(
               title,
               style: cardTitleTextStyle,
