@@ -65,18 +65,6 @@ class _SplashScreenState extends State<SplashScreen> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 _baker = snapshot.data;
-                // logs
-                // print(_baker.freeBread.count);
-                // print(_baker.givenBread.count);
-
-                /*
-                _baker.freeBread.count = 0
-
-                + ya bastın -> count ++ , sistemi bilgilendir
-              db de yeni bi countun oluştu
-              db de sana yeni veriyi aktardı
-              _baker.freeBread.count ile yeni count u aldın
-                 */
 
                 // if user enters the application, navigate to onboarding page, otherwise home page
                 // navigate with baker object as a parameter
