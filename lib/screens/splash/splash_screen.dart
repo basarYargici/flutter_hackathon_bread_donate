@@ -5,8 +5,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_hackathon_bread_donate/config/checkIsLoggedIn.dart';
 import 'package:flutter_hackathon_bread_donate/config/constants.dart';
 import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
-import 'package:flutter_hackathon_bread_donate/models/baker_system_model.dart';
-import 'package:flutter_hackathon_bread_donate/service/service.dart';
 import 'package:flutter_hackathon_bread_donate/widgets/lottie_widget.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -21,23 +19,19 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  Baker _baker;
   int logInCount;
 
   @override
   void initState() {
     super.initState();
+    timer();
   }
 
   @override
   Widget build(BuildContext context) {
-    print('splash');
     SizeConfig().init(context);
     return Scaffold(
       body: Container(
-        // TODO's search: is this necessary?
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
         child: buildColumn(),
       ),
     );
@@ -60,30 +54,21 @@ class _SplashScreenState extends State<SplashScreen> {
               appName: Constants.APP_NAME,
             )),
         Expanded(
-          flex: 1,
-          child: FutureBuilder(
-            future: getData(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                _baker = snapshot.data;
-
-                // if user enters the application, navigate to onboarding page, otherwise home page
-                // navigate with baker object as a parameter
-                print('Navigating');
-                Timer(Duration(seconds: 3), () {
-                  isLoggedIn().then((value) =>
-                      Navigator.pushReplacementNamed(context, value));
-                });
-              }
-              return Center(
-                  child: SpinKitPumpingHeart(
-                color: Colors.black,
-                size: 75.0,
-              ));
-            },
+          child: Center(
+            child: SpinKitPumpingHeart(
+              color: Colors.black,
+              size: 75.0,
+            ),
           ),
-        )
+        ),
       ],
     );
+  }
+
+  void timer() {
+    Timer(Duration(seconds: 3), () {
+      isLoggedIn()
+          .then((value) => Navigator.pushReplacementNamed(context, value));
+    });
   }
 }

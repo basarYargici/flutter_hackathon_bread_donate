@@ -47,7 +47,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           margin: EdgeInsets.all(getProportionateScreenWidth(8)),
           height: getProportionateScreenHeight(40),
           width: getProportionateScreenWidth(80),
-          child: InkyButton()),
+          child: InkyButton(
+            text: 'GEÇ',
+            onTap: () {
+              Navigator.pushNamed(context, HomeScreen.routeName);
+            },
+          )),
     ]);
   }
 
@@ -55,18 +60,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Expanded(
       flex: 7,
       child: PageView.builder(
-          controller: _pageController,
-          itemCount: dataOnboarding.length,
-          onPageChanged: (value) {
-            setState(() {
-              currentPageIndex = value;
-            });
-          },
-          itemBuilder: (context, index) => OnboardContent(
-                lottie: dataOnboarding[index]['lottie'],
-                title: dataOnboarding[index]['title'],
-                text: dataOnboarding[index]['text'],
-              )),
+        controller: _pageController,
+        itemCount: dataOnboarding.length,
+        onPageChanged: (value) {
+          setState(() {
+            currentPageIndex = value;
+          });
+        },
+        itemBuilder: (context, index) => OnboardContent(
+          lottie: dataOnboarding[index]['lottie'],
+          title: dataOnboarding[index]['title'],
+          text: dataOnboarding[index]['text'],
+        ),
+      ),
     );
   }
 

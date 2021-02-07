@@ -11,12 +11,12 @@ class OnboardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     final size = MediaQuery.of(context).size;
+    SizeConfig().init(context);
     return Column(
       children: [
         SizedBox(
-          child: LottieWidget(path: 'lottie_onboard.json'),
+          child: LottieWidget(path: lottie),
           height: size.height * 0.45,
           width: size.width * 0.7,
         ),
