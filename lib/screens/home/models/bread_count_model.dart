@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 
 class SelectedBreadInfo with ChangeNotifier {
   int _breadCount = 1;
+  bool _isDisabled = false;
 
+  bool get isDisabled => _isDisabled;
   int get breadCount => _breadCount;
 
   void incrementBreadCount() {
@@ -17,6 +19,11 @@ class SelectedBreadInfo with ChangeNotifier {
 
   void resetBreadCount() {
     _breadCount = 0;
+    notifyListeners();
+  }
+
+  void toggleDisabled() {
+    _isDisabled = !isDisabled;
     notifyListeners();
   }
 }

@@ -4,7 +4,7 @@ import 'package:flutter_hackathon_bread_donate/config/styles/styles.dart';
 class VerticalCard extends StatelessWidget {
   final Image image;
   final String title;
-  final String number;
+  final int number;
 
   const VerticalCard({
     Key key,
@@ -39,10 +39,12 @@ class VerticalCard extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          Text(
-            number,
-            style: cardNumberTextStyle,
-          )
+          number != null
+              ? Text(
+                  number.toString(),
+                  style: cardNumberTextStyle,
+                )
+              : CircularProgressIndicator(),
         ],
       ),
     );

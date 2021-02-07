@@ -19,14 +19,30 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int avaibleBreadCount = 28423;
+  int _availableBreadCount;
+  int _totalGivenBreadCount;
 
   @override
   void initState() {
     super.initState();
-    // var res = await http.get(
-    //     'https://flutterhackathon21-breaddonate-default-rtdb.firebaseio.com/free.json');
-    // avaibleBreadCount = jsonDecode(res.body)['count'];
+    _updateCount('free_bread');
+    _updateCount('given_bread');
+  }
+
+  void _updateCount(String endPoint) async {
+    var res = await http.get(
+        'https://flutterhackathon21-breaddonate-default-rtdb.firebaseio.com/$endPoint.json');
+    var count = jsonDecode(res.body)['count'];
+
+    switch (endPoint) {
+      case 'given_bread':
+        _totalGivenBreadCount = count;
+        break;
+      case 'free_bread':
+        _availableBreadCount = count;
+        break;
+    }
+    setState(() {});
   }
 
   @override
@@ -47,20 +63,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   image: AssetImage('assets/images/png/bread_icon_black.png'),
                 ),
                 title: 'Askıdaki Ekmekler',
-                number: '${avaibleBreadCount.toString()}',
+                number: _availableBreadCount,
               ),
               CustomCard(
                 image: Image(
                   image: AssetImage('assets/images/png/location.png'),
                 ),
                 title: 'Aktif Şehir',
-                number: '21',
+                number: 21,
               ),
             ],
           ),
           VerticalCard(
             image: Image.asset('assets/images/png/hand_with_bread.png'),
-            number: '215423',
+            number: _totalGivenBreadCount,
             title: 'Askıdan alınan ekmek sayısı',
           ),
           GestureDetector(
@@ -74,10 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.all(18.0),
                 child: Text(
                   'Bağışla',
-                  style: TextStyle(
-                      fontSize: 48,
-                      fontFamily: 'Comfortaa',
-                      color: Colors.white),
+                  style: donateTextStyle,
                 ),
               ),
             ),

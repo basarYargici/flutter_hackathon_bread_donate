@@ -49,6 +49,9 @@ final TextStyle cardNumberTextStyle = TextStyle(
   fontWeight: FontWeight.w800,
 );
 
+final TextStyle donateTextStyle =
+    TextStyle(fontSize: 48, fontFamily: 'Comfortaa', color: Colors.white);
+
 //box styles
 final BoxShadow cardBoxShadow = BoxShadow(
   blurRadius: 4,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/routes.dart';
 import 'package:flutter_hackathon_bread_donate/screens/home/home_screen.dart';
+import 'package:flutter_hackathon_bread_donate/screens/donationPage/donation_received.dart';
 import 'package:flutter_hackathon_bread_donate/screens/splash/splash_screen.dart';
 
 import 'config/styles/styles.dart';

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon_bread_donate/config/constants.dart';
 import 'package:flutter_hackathon_bread_donate/config/size_config.dart';
@@ -7,7 +8,7 @@ import 'package:flutter_hackathon_bread_donate/screens/onBoard/components/onboar
 
 import 'components/inky_button.dart';
 
-// TODO's Sharedpref first time opening
+
 // TODO's add new lottie gifs to new pageview screens
 
 class OnboardingScreen extends StatefulWidget {
@@ -28,6 +29,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.initState();
     _pageController = PageController();
   }
+
+
 
   @override
   Widget build(BuildContext context) {

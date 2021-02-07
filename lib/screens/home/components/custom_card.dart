@@ -5,7 +5,7 @@ import 'package:flutter_hackathon_bread_donate/config/styles/styles.dart';
 class CustomCard extends StatelessWidget {
   final Image image;
   final String title;
-  final String number;
+  final int number;
 
   const CustomCard({
     Key key,
@@ -35,10 +35,12 @@ class CustomCard extends StatelessWidget {
             title,
             style: cardTitleTextStyle,
           ),
-          Text(
-            number,
-            style: cardNumberTextStyle,
-          )
+          number != null
+              ? Text(
+                  number.toString(),
+                  style: cardNumberTextStyle,
+                )
+              : CircularProgressIndicator(),
         ],
       ),
     );
