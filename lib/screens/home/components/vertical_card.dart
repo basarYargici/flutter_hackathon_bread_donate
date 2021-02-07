@@ -18,7 +18,7 @@ class VerticalCard extends StatelessWidget {
     return Container(
       width: 380,
       height: 135,
-      decoration: customCardBoxDecoration,
+      decoration: shadowedBoxDecoration.copyWith(color: Color(0xffDCD8F1)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

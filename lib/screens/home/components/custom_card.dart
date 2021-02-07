@@ -18,7 +18,7 @@ class CustomCard extends StatelessWidget {
     return Container(
       height: 220,
       width: 180,
-      decoration: customCardBoxDecoration,
+      decoration: shadowedBoxDecoration.copyWith(color: Color(0xffDCD8F1)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
