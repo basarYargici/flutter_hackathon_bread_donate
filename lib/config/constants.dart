@@ -5,7 +5,7 @@ class Constants {
       'https://flutterhackathon21-breaddonate-default-rtdb.firebaseio.com/';
 }
 
-List<Map<String, String>> dataOnBoarding = [
+List<Map<String, String>> dataOnboarding = [
   {
     'lottie': 'assets/json/lottie_onboard.json',
     'title': 'Askıda Ekmek Nedir?',

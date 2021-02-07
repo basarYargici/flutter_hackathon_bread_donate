@@ -10,16 +10,17 @@ final TextStyle baseStyle = TextStyle(
   color: Colors.black,
 );
 
-final TextStyle appbarStyle1 = baseStyle.copyWith(
-  fontSize: getProportionateScreenWidth(10),
-  color: Colors.black54,
-  fontWeight: FontWeight.bold,
+final TextStyle onboardingTitleStyle = TextStyle(
+  fontSize: getProportionateScreenWidth(25),
+  letterSpacing: 4,
+  color: Colors.black,
+  fontWeight: FontWeight.normal,
 );
 
-final TextStyle categoryStyle = baseStyle.copyWith(
-  fontSize: getProportionateScreenWidth(10),
-  color: Colors.white,
-  fontWeight: FontWeight.bold,
+final TextStyle onboardingSubTitleStyle = TextStyle(
+  fontSize: getProportionateScreenWidth(15),
+  letterSpacing: 2,
+  color: Colors.black,
 );
 
 final TextStyle titleStyle = baseStyle.copyWith(
@@ -32,10 +33,6 @@ final TextStyle titleStyle = baseStyle.copyWith(
 final TextStyle subtitleStyle = baseStyle.copyWith(
   color: Colors.black45,
   fontWeight: FontWeight.normal,
-);
-
-final TextStyle contentStyle = baseStyle.copyWith(
-  fontWeight: FontWeight.w300,
 );
 
 final TextStyle cardTitleTextStyle = TextStyle(
