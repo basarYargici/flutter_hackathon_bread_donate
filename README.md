@@ -1,5 +1,5 @@
-# flutter_hackathon_bread_donate
-
+# Flutter Hackathon 2021 Turkey
+## Bread Donate Application
 This project was built for the Flutter Hackhaton Turkey. </br>Main aim of this project is innovate in the "Askıda Ekmek" system which has purpose of help people in need.
 
 ## Getting Started
