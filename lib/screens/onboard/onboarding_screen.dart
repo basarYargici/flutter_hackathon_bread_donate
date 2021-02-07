@@ -8,7 +8,6 @@ import 'package:flutter_hackathon_bread_donate/screens/onBoard/components/onboar
 
 import 'components/inky_button.dart';
 
-
 // TODO's add new lottie gifs to new pageview screens
 
 class OnboardingScreen extends StatefulWidget {
@@ -30,10 +29,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     _pageController = PageController();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
         body: Column(
