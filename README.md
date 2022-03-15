@@ -1,5 +1,5 @@
 # Flutter Hackathon 2021 Turkey
-## Bread Donate Application
+## Bread Donate Application(Firebase + Futter)
 This project was built for the Flutter Hackhaton Turkey. </br>Main aim of this project is innovate in the "Askıda Ekmek" system which has purpose of help people in need.
 
 ## Getting Started
@@ -16,3 +16,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+<p align="center">
+ <img src="https://github.com/basarYargici/flutter_hackathon_bread_donate/blob/main/assets/AppVideo.gif" width="450" height="975">
+</p>
